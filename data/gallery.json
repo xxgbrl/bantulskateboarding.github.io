@@ -1,0 +1,29 @@
+{
+  "heading": "Gallery",
+  "items": [
+    {
+      "image": "/images/gal3.jpg",
+      "alt": "Anggota membawa bendera Bantul Skateboarding"
+    },
+    {
+      "image": "/images/gal1.jpg",
+      "alt": "Skater hitam putih melakukan trik di malam hari"
+    },
+    {
+      "image": "/images/gal2.jpg",
+      "alt": "Skater berhijab di atas rail dalam ruangan"
+    },
+    {
+      "image": "/images/gal4.jpg",
+      "alt": "Skater melompati tumpukan papan skate"
+    },
+    {
+      "image": "/images/gal5.jpg",
+      "alt": "Tiga trik skater berurutan"
+    },
+    {
+      "image": "/images/gal6.jpg",
+      "alt": "Kerumunan anggota dengan bendera komunitas"
+    }
+  ]
+}

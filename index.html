@@ -1,19 +1,20 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Bantul Skateboarding – Komunitas Skateboard Independen dari Bantul, Yogyakarta</title>
-<meta name="description" content="Bantul Skateboarding adalah komunitas skateboard independen yang dibentuk tahun 2017 di Bantul, Yogyakarta. Lihat kegiatan, prestasi anggota, riwayat event, dan cara menghubungi kami.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Bantul Skateboarding">
-<meta property="og:description" content="Tak peduli latar belakang, di atas papan kita semua setara dan bersaudara.">
-<meta property="og:url" content="https://bantulskateboarding.my.id/">
-<meta property="og:image" content="https://bantulskateboarding.my.id/images/hero.jpg">
-<meta name="theme-color" content="#0e0e0e">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Chivo+Mono:wght@500;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="icon" href="images/logo.png" />
+<meta name="description" content="Bantul Skateboarding adalah komunitas skateboard independen yang dibentuk tahun 2017 di Bantul, Yogyakarta. Lihat kegiatan, prestasi anggota, riwayat event, dan cara menghubungi kami." />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Bantul Skateboarding" />
+<meta property="og:description" content="Tak peduli latar belakang, di atas papan kita semua setara dan bersaudara." />
+<meta property="og:url" content="https://bantulskateboarding.my.id/" />
+<meta property="og:image" content="images/hero.jpg">
+<meta name="theme-color" content="#0e0e0e" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Chivo+Mono:wght@500;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
 <style>
 :root{
   --bg:#0e0e0e; --card:#242424; --card2:#2e2e2e; --ink:#f2f0ea; --mute:#b4b1a8; --hot:#ff5a3c; --sun:#ffb347;
@@ -130,225 +131,105 @@ footer img{height:34px;width:auto}
 
 <header>
   <div class="wrap">
-    <a href="#beranda"><img src="images/logo.png" alt="Bantul Skateboarding" width="60" height="34"></a>
-    <nav aria-label="Menu utama">
-      <ul>
-        <li><a href="#tentang">Tentang</a></li>
-        <li><a href="#visi">Visi &amp; Misi</a></li>
-        <li><a href="#kegiatan">Kegiatan</a></li>
-        <li><a href="#prestasi">Prestasi</a></li>
-        <li><a href="#struktur">Struktur</a></li>
-        <li><a href="#event">Event</a></li>
-        <li><a href="#galeri">Galeri</a></li>
-        <li><a href="#kontak">Kontak</a></li>
-      </ul>
-    </nav>
+    <a href="#beranda"><img id="logo" src="images/logo.png" alt="Bantul Skateboarding" width="60" height="34"></a>
+    <nav aria-label="Menu utama"><ul id="nav-list"></ul></nav>
   </div>
 </header>
 
+<!-- Kerangka halaman. ISI semua section diatur lewat CMS (folder /data), jangan edit teks di sini. -->
 <main id="beranda">
-  <div class="hero">
+  <div class="hero" id="hero">
     <div class="wrap">
-      <h1>Bantul Skateboarding</h1>
-      <p>Tak peduli latar belakang, di atas papan kita semua setara dan bersaudara.</p>
-      <div class="btns">
-        <a class="btn" href="#kontak">Gabung bersama kami</a>
-        <a class="btn line" href="#kegiatan">Lihat kegiatan</a>
-      </div>
+      <h1 id="hero-title"></h1>
+      <p id="hero-sub"></p>
+      <div class="btns" id="hero-btns"></div>
     </div>
   </div>
-
-  <section id="tentang" class="about">
-    <div class="wrap two">
-      <div>
-        <h2>About Us</h2>
-        <p><strong>Bantul Skateboarding</strong> merupakan komunitas skateboard independen yang dibentuk pada tahun 2017 di Kota Bantul, Yogyakarta.</p>
-        <p>Komunitas ini hadir dari semangat kolektif para skater yang ingin berkarya dan tumbuh bersama di ruang publik Skatepark Taman Milenial Bantul.</p>
-        <p>Di sini, kami bukan hanya berkumpul untuk bermain skate. Kami adalah ruang aman untuk berekspresi, berkarya, dan menyalurkan hobi. Membangun solidaritas, mendukung kreativitas, dan menciptakan energi positif untuk semua anggota.</p>
-      </div>
-      <img class="photo" src="images/about.jpg" alt="Foto bersama anggota Bantul Skateboarding" loading="lazy">
-    </div>
-  </section>
-
-  <section id="visi" class="vm">
-    <div class="wrap two">
-      <h2>Vision<br>+ Mission</h2>
-      <div>
-        <div class="block">
-          <h3>+ Vision</h3>
-          <p>Membangun ekosistem skateboard yang solid, progresif, dan berdampak di Bantul, serta menjadi inspirasi bagi komunitas skateboard di wilayah lain.</p>
-        </div>
-        <div class="block">
-          <h3>+ Mission</h3>
-          <ul>
-            <li>Menyediakan ruang dan kegiatan yang aman, suportif, dan menyenangkan bagi para skater.</li>
-            <li>Mendorong pengembangan bakat generasi muda melalui latihan rutin, kolaborasi, dan kompetisi.</li>
-            <li>Menjalin relasi antar komunitas lokal dan regional dalam semangat brotherhood dan sportivitas.</li>
-            <li>Mengangkat eksistensi skateboarding sebagai bagian dari budaya urban dan ekspresi kreatif anak muda.</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="kegiatan">
-    <div class="wrap">
-      <h2>Activities<br>+ Programs</h2>
-      <div class="intro">
-        <p>Aktivitas komunitas mencakup sesi latihan rutin, event komunitas, hingga kegiatan terbuka untuk umum.</p>
-        <p>Menciptakan ekosistem yang mendukung pertumbuhan skill sekaligus mempererat kebersamaan. Program-program ini menjadi wadah bagi siapa saja untuk terlibat dalam budaya skateboard yang hidup dan inklusif.</p>
-      </div>
-      <div class="cards">
-        <figure class="act"><img src="images/fun-skate.jpg" alt="Skater melompati api saat Fun Skate" loading="lazy"><figcaption><span class="pill">Activity</span><b>Fun Skate</b></figcaption></figure>
-        <figure class="act"><img src="images/rail-jam.jpg" alt="Skater di atas rail merah saat Rail Jam" loading="lazy"><figcaption><span class="pill">Activity</span><b>Rail Jam</b></figcaption></figure>
-        <figure class="act"><img src="images/game-of-skate.jpg" alt="Skater melompat saat Game of Skate" loading="lazy" style="object-position:top"><figcaption><span class="pill">Activity</span><b>Game of Skate</b></figcaption></figure>
-        <figure class="act"><img src="images/skate-mural.jpg" alt="Mural warna-warni di bowl skatepark" loading="lazy"><figcaption><span class="pill">Activity</span><b>Skate x Mural</b></figcaption></figure>
-        <figure class="act"><img src="images/go-skate-day.jpg" alt="Panggung Go Skateboarding Day" loading="lazy"><figcaption><span class="pill">Activity</span><b>Go Skateboarding Day</b></figcaption></figure>
-        <figure class="act"><img src="images/event-collabs.jpg" alt="Pembawa acara di event kolaborasi" loading="lazy"><figcaption><span class="pill">Activity</span><b>Event Collabs</b></figcaption></figure>
-        <figure class="act"><img src="images/skate-school.jpg" alt="Sesi belajar Skate School" loading="lazy"><figcaption><span class="pill">Programs</span><b>Skate School</b></figcaption></figure>
-        <figure class="act"><img src="images/community-visit.jpg" alt="Kunjungan komunitas ke event skate" loading="lazy"><figcaption><span class="pill">Programs</span><b>Community Visit</b></figcaption></figure>
-      </div>
-    </div>
-  </section>
-
-  <section id="prestasi" class="ach">
-    <div class="wrap">
-      <div class="two wide-l">
-        <div>
-          <h2>Member<br>Achievements</h2>
-          <p>Sejak berdiri lebih dari lima tahun lalu, komunitas ini berkembang dari sekelompok kecil teman menjadi kolektif skateboard yang aktif dan solid.</p>
-          <p>Pencapaian anggota diakui baik secara individu maupun kolektif, mencerminkan konsistensi partisipasi, perkembangan skill, serta kontribusi dalam menjalankan peran masing-masing di setiap sesi dan event komunitas.</p>
-        </div>
-        <img class="photo" src="images/member.jpg" alt="Anggota menerima sertifikat penghargaan" loading="lazy" style="aspect-ratio:4/3;object-position:center 20%">
-      </div>
-      <div id="athletes"></div>
-    </div>
-  </section>
-
-  <section id="struktur">
-    <div class="wrap two">
-      <div>
-        <h2>Structure<br>+ Teams</h2>
-        <p>Pengelolaan komunitas bersifat kolaboratif dan fleksibel, di mana setiap anggota memiliki peran (jobdesk) masing-masing dalam menjalankan kegiatan. Koordinasi sesi, event, dan keputusan bersama dilakukan secara bergotong royong, dengan ruang bagi setiap orang untuk berkontribusi sesuai kemampuan dan tanggung jawabnya.</p>
-      </div>
-      <div class="org">
-        <div class="row"><div class="node top"><small>Ketua</small><strong>Toni</strong></div></div>
-        <div class="row">
-          <div class="node"><small>Wakil Ketua 1</small><strong>Danar</strong></div>
-          <div class="node"><small>Wakil Ketua 2</small><strong>Rony</strong></div>
-        </div>
-        <div class="row">
-          <div class="node"><small>Bendahara</small><strong>Havi</strong></div>
-          <div class="node"><small>Sekretaris 1</small><strong>Kesyi</strong></div>
-          <div class="node"><small>Sekretaris 2</small><strong>Sabil</strong></div>
-        </div>
-        <div class="row">
-          <div class="node"><small>Sie. Acara</small><strong>Rony</strong></div>
-          <div class="node"><small>Sie. Perkap</small><strong>Hasan</strong></div>
-          <div class="node"><small>Sie. Media</small><strong>Raja</strong></div>
-          <div class="node"><small>Sie. Humas</small><strong>Rafi</strong></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="event" class="events">
-    <div class="wrap">
-      <h2>Event<br>History</h2>
-      <div class="intro">
-        <p>Komunitas Bantul Skateboarding telah menjalin kolaborasi dengan sejumlah brand dalam berbagai kegiatan, mulai dari dukungan event, produk, hingga aktivitas bersama lainnya. Kolaborasi ini tidak hanya memperkuat eksistensi dan jangkauan komunitas, tetapi juga membuka lebih banyak peluang bagi anggota untuk berkembang dan dikenal lebih luas, baik di Bantul maupun ke wilayah lain.</p>
-      </div>
-      <ol class="tl" id="timeline"></ol>
-    </div>
-  </section>
-
-  <section id="galeri">
-    <div class="wrap">
-      <h2>Gallery</h2>
-      <div class="gal">
-        <img src="images/gal3.jpg" alt="Anggota membawa bendera Bantul Skateboarding" loading="lazy">
-        <img src="images/gal1.jpg" alt="Skater hitam putih melakukan trik di malam hari" loading="lazy">
-        <img src="images/gal2.jpg" alt="Skater berhijab di atas rail dalam ruangan" loading="lazy">
-        <img src="images/gal4.jpg" alt="Skater melompati tumpukan papan skate" loading="lazy">
-        <img src="images/gal5.jpg" alt="Tiga trik skater berurutan" loading="lazy">
-        <img src="images/gal6.jpg" alt="Kerumunan anggota dengan bendera komunitas" loading="lazy">
-      </div>
-    </div>
-  </section>
-
-  <section id="kontak" class="contact" style="background:#141414">
-    <div class="wrap two">
-      <div>
-        <h2>Contact<br>+ Socials</h2>
-        <h3>Media sosial komunitas</h3>
-        <dl>
-          <dt>Instagram</dt>
-          <dd><a href="https://instagram.com/bantulskateboarding" target="_blank" rel="noopener">@bantulskateboarding</a><br><a href="https://instagram.com/girlsbantulskateboarding" target="_blank" rel="noopener">@girlsbantulskateboarding</a></dd>
-          <dt>TikTok</dt>
-          <dd><a href="https://www.tiktok.com/@bantulskateboarding" target="_blank" rel="noopener">@bantulskateboarding</a></dd>
-        </dl>
-        <h3>Contact person</h3>
-        <dl>
-          <dt>Nama</dt><dd>Danar Riyandi Wicaksono</dd>
-          <dt>Instagram</dt><dd><a href="https://instagram.com/dnrrnd1__" target="_blank" rel="noopener">@dnrrnd1__</a></dd>
-          <dt>WhatsApp</dt><dd><a href="https://wa.me/6283113030703?text=Halo%20Bantul%20Skateboarding" target="_blank" rel="noopener">+62 831-1303-0703</a></dd>
-        </dl>
-        <a class="btn" href="https://wa.me/6283113030703?text=Halo%20Bantul%20Skateboarding%2C%20aku%20mau%20gabung" target="_blank" rel="noopener">Chat lewat WhatsApp</a>
-      </div>
-      <img class="photo" src="images/contact.jpg" alt="Foto bersama anggota Bantul Skateboarding di malam hari" loading="lazy">
-    </div>
-  </section>
+  <section id="tentang" class="about"><div class="wrap two" id="about"></div></section>
+  <section id="visi" class="vm"><div class="wrap two" id="vision"></div></section>
+  <section id="kegiatan"><div class="wrap" id="activities"></div></section>
+  <section id="prestasi" class="ach"><div class="wrap" id="achievements"></div></section>
+  <section id="struktur"><div class="wrap two" id="structure"></div></section>
+  <section id="event" class="events"><div class="wrap" id="events"></div></section>
+  <section id="galeri"><div class="wrap" id="gallery"></div></section>
+  <section id="kontak" class="contact" style="background:#141414"><div class="wrap two" id="contact"></div></section>
 </main>
 
 <footer>
   <div class="wrap">
-    <img src="images/logo.png" alt="Bantul Skateboarding" width="60" height="34">
-    <p>© 2026 Bantul Skateboarding. Skatepark Taman Milenial Bantul, Yogyakarta.</p>
+    <img id="logo2" src="images/logo.png" alt="Bantul Skateboarding" width="60" height="34">
+    <p id="footer-text"></p>
   </div>
 </footer>
 
 <script>
-const athletes=[
- {n:"Tecto",img:"tecto",alt:"Tecto bersama peserta lomba memegang sertifikat",r:[
-  ["3rd","Under 15","YSC","2021"],["1st","Women Class","Porda DIY","2022"],["2nd","Women Class","Localpride Fest","2022"],
-  ["2nd","Game of Skate","Fornas Jabar","2023"],["3rd","Best Trick","Fornas Jabar","2023"],["1st","Women Class","Kemerdekaan Fest","2023"],
-  ["2nd","Women Class","LPM Kuta Open","2023"],["2nd","Women Class","Titi Batu Ubud","2023"],["4th","Open Women","Kuta Bahari Fest","2023"],
-  ["3rd","Street Women","Fonas NTB","2025"]]},
- {n:"Kesyi",img:"kesyi",alt:"Kesyi dengan medali dan hadiah lomba",r:[
-  ["2nd","Women Class","YSC","Maret 2022"],["3rd","Women Class","YSC","September 2022"],["2nd","Women Class","YSC","2024"],
-  ["Best Skater","76 Heppiii","","2026"]]},
- {n:"Kenzie",img:"kenzie",alt:"Kenzie dengan medali dan sertifikat",r:[
-  ["3rd","Under 15 Class","Exhibition Porda XVI DIY","2022"],["2nd","Beginner Class","HUT RI Skate Comp.","2023"],
-  ["1st","Beginner Class","YSC x JCM","2025"],["2nd","Street Under 15 Men","Kejurnas Skate Jakarta","2026"],
-  ["2nd","Beginner Class Campuran","Forda II DIY","2026"]]},
- {n:"Juno",img:"juno",alt:"Juno bersama peraih medali Forda DIY",r:[
-  ["2nd","Beginner Class Campuran","Forda I DIY","2025"],["1st","Beginner Class Campuran","Forda II DIY","2026"]]}
-];
+/* Semua konten dibaca dari folder /data (diedit lewat Pages CMS). */
+const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const src=p=>esc(String(p||"").replace(/^\/+/,""));
+const fmt=s=>esc(s).replace(/\*\*(.+?)\*\*/g,"<strong>$1</strong>").replace(/\n/g,"<br>");   // **tebal** + baris baru
+const paras=a=>(a||[]).map(t=>`<p>${fmt(t)}</p>`).join("");
 const sup=s=>s.replace(/^(\d)(st|nd|rd|th)(.*)$/,"$1<sup>$2</sup>$3");
-document.getElementById("athletes").innerHTML=athletes.map(a=>`
- <div class="who">
-  <div><h3>${a.n}’s Achievements</h3><img class="photo" src="images/${a.img}.jpg" alt="${a.alt}" loading="lazy"></div>
-  <div class="res">${a.r.map(x=>`<div class="${x[0].startsWith("1")?"win":""}"><strong>${sup(x[0])}${/^\d/.test(x[0])?" Place":""}</strong><b>${x[1]}</b><span>${[x[2],x[3]].filter(Boolean).join(" · ")}</span></div>`).join("")}</div>
- </div>`).join("");
+const isUrl=h=>/^https?:/.test(h);
+const load=n=>fetch("data/"+n+".json",{cache:"no-cache"}).then(r=>{if(!r.ok)throw new Error(n+" "+r.status);return r.json()});
+const $=id=>document.getElementById(id);
+const run=(n,fn)=>load(n).then(fn).catch(e=>console.error("Gagal memuat data/"+n+".json",e));
 
-const ev=[
- ["Go Skateboarding Day Bantul","Skatepark Bantul","2023"],
- ["Go Skateboarding Day Bantul x 76 Heppiii","Stadion Sultan Agung","2024"],
- ["Skate x Mural 76 Heppiii Community","Skatepark Bantul","2024"],
- ["Fun Skate","Skatepark Bantul","Mei 2025"],
- ["Go Skateboarding Day Bantul x 76 Heppiii","Transmart Maguwoharjo","2025"],
- ["Fun Skate","Skatepark Bantul","Juni 2025"],
- ["Fun Skate","Skatepark Bantul","Agustus 2025"],
- ["Road To IAK 2025 x 76 Heppiii","Transmart Maguwoharjo","2025"],
- ["Weekend Heppiii Ngapel","JNM Bloc","September 2025"],
- ["Weekend Heppiii Ngapel","Balai Pamungkas YK","Desember 2025"],
- ["Skate JAM x MILLS","Jogja City Mall","2026"],
- ["Bantul Skateboarding x Sender Emma","Sender Emma","2026"],
- ["Road To Heppiii Skateday","Sender Emma","2026"],
- ["Road To Heppiii Skateday","Transmart Maguwoharjo","2026"],
- ["Go Skateboarding Day Bantul","Skatepark Bantul","2026"]
-];
-document.getElementById("timeline").innerHTML=ev.map(e=>`<li><b>${e[0]}</b><span>${e[1]} · ${e[2]}</span></li>`).join("");
+run("site",d=>{
+  if(d.logo){["logo","logo2"].forEach(i=>{$(i).src=src(d.logo)})}
+  if(d.logo_alt){["logo","logo2"].forEach(i=>{$(i).alt=d.logo_alt})}
+  $("footer-text").textContent=d.footer_text||"";
+});
+
+run("nav",d=>{$("nav-list").innerHTML=(d.items||[]).map(i=>`<li><a href="${esc(i.href)}"${isUrl(i.href)?' target="_blank" rel="noopener"':""}>${esc(i.label)}</a></li>`).join("")});
+
+run("home",d=>{
+  $("hero-title").textContent=d.title||"";
+  $("hero-sub").textContent=d.subtitle||"";
+  if(d.image)$("hero").style.backgroundImage=`url("${encodeURI(String(d.image).replace(/^\/+/,"")).replace(/"/g,"%22")}")`;
+  $("hero-btns").innerHTML=(d.buttons||[]).map(b=>`<a class="btn${b.style==="line"?" line":""}" href="${esc(b.href)}"${isUrl(b.href)?' target="_blank" rel="noopener"':""}>${esc(b.label)}</a>`).join("");
+});
+
+run("about",d=>{$("about").innerHTML=`<div><h2>${fmt(d.heading)}</h2>${paras(d.paragraphs)}</div><img class="photo" src="${src(d.image)}" alt="${esc(d.alt)}" loading="lazy">`});
+
+run("vision",d=>{$("vision").innerHTML=`<h2>${fmt(d.heading)}</h2><div>
+  <div class="block"><h3>+ Vision</h3><p>${fmt(d.vision)}</p></div>
+  <div class="block"><h3>+ Mission</h3><ul>${(d.missions||[]).map(m=>`<li>${fmt(m)}</li>`).join("")}</ul></div></div>`});
+
+run("activities",d=>{$("activities").innerHTML=`<h2>${fmt(d.heading)}</h2><div class="intro">${paras(d.intro)}</div><div class="cards">${(d.items||[]).map(a=>
+  `<figure class="act"><img src="${src(a.image)}" alt="${esc(a.alt)}" loading="lazy"${a.focus==="top"?' style="object-position:top"':""}><figcaption><span class="pill">${esc(a.type)}</span><b>${esc(a.title)}</b></figcaption></figure>`).join("")}</div>`});
+
+run("athletes",d=>{$("achievements").innerHTML=`<div class="two wide-l"><div><h2>${fmt(d.heading)}</h2>${paras(d.intro)}</div><img class="photo" src="${src(d.image)}" alt="${esc(d.alt)}" loading="lazy" style="aspect-ratio:4/3;object-position:center 20%"></div>
+  <div>${(d.items||[]).map(a=>`
+   <div class="who">
+    <div><h3>${esc(a.name)}’s Achievements</h3><img class="photo" src="${src(a.image)}" alt="${esc(a.alt)}" loading="lazy"></div>
+    <div class="res">${(a.results||[]).map(x=>{const p=esc(x.place);return `<div class="${p.startsWith("1")?"win":""}"><strong>${sup(p)}${/^\d/.test(p)?" Place":""}</strong><b>${esc(x.category)}</b><span>${[x.event,x.year].filter(Boolean).map(esc).join(" · ")}</span></div>`}).join("")}</div>
+   </div>`).join("")}</div>`});
+
+run("structure",d=>{$("structure").innerHTML=`<div><h2>${fmt(d.heading)}</h2><p>${fmt(d.text)}</p></div><div class="org">${(d.rows||[]).map(r=>
+  `<div class="row">${(r.members||[]).map(m=>`<div class="node${m.featured?" top":""}"><small>${esc(m.role)}</small><strong>${esc(m.name)}</strong></div>`).join("")}</div>`).join("")}</div>`});
+
+run("events",d=>{$("events").innerHTML=`<h2>${fmt(d.heading)}</h2><div class="intro">${paras(d.intro)}</div><ol class="tl">${(d.items||[]).map(e=>
+  `<li><b>${esc(e.title)}</b><span>${[e.place,e.date].filter(Boolean).map(esc).join(" · ")}</span></li>`).join("")}</ol>`});
+
+run("gallery",d=>{$("gallery").innerHTML=`<h2>${fmt(d.heading)}</h2><div class="gal">${(d.items||[]).map(g=>`<img src="${src(g.image)}" alt="${esc(g.alt)}" loading="lazy">`).join("")}</div>`});
+
+run("contact",d=>{
+  const num=String(d.whatsapp_number||"").replace(/\D/g,"");
+  const wa=t=>`https://wa.me/${num}?text=${encodeURIComponent(t||"")}`;
+  const ig=String(d.person_instagram||"").replace(/^@/,"");
+  const ext=u=>`href="${esc(u)}" target="_blank" rel="noopener"`;
+  $("contact").innerHTML=`<div><h2>${fmt(d.heading)}</h2>
+   <h3>Media sosial komunitas</h3>
+   <dl>${(d.socials||[]).map(s=>`<dt>${esc(s.platform)}</dt><dd>${(s.accounts||[]).map(a=>`<a ${ext(a.url)}>${esc(a.handle)}</a>`).join("<br>")}</dd>`).join("")}</dl>
+   <h3>Contact person</h3>
+   <dl>
+     <dt>Nama</dt><dd>${esc(d.person_name)}</dd>
+     ${ig?`<dt>Instagram</dt><dd><a ${ext("https://instagram.com/"+ig)}>@${esc(ig)}</a></dd>`:""}
+     ${num?`<dt>WhatsApp</dt><dd><a ${ext(wa(d.whatsapp_greeting))}>${esc(d.whatsapp_display||"+"+num)}</a></dd>`:""}
+   </dl>
+   ${num?`<a class="btn" ${ext(wa(d.button_message))}>${esc(d.button_label||"Chat lewat WhatsApp")}</a>`:""}
+  </div><img class="photo" src="${src(d.image)}" alt="${esc(d.alt)}" loading="lazy">`;
+});
 </script>
 </body>
 </html>

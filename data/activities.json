@@ -1,0 +1,65 @@
+{
+  "heading": "Activities\n+ Programs",
+  "intro": [
+    "Aktivitas komunitas mencakup sesi latihan rutin, event komunitas, hingga kegiatan terbuka untuk umum.",
+    "Menciptakan ekosistem yang mendukung pertumbuhan skill sekaligus mempererat kebersamaan. Program-program ini menjadi wadah bagi siapa saja untuk terlibat dalam budaya skateboard yang hidup dan inklusif."
+  ],
+  "items": [
+    {
+      "title": "Fun Skate",
+      "type": "Activity",
+      "image": "/images/fun-skate.jpg",
+      "alt": "Skater melompati api saat Fun Skate",
+      "focus": "center"
+    },
+    {
+      "title": "Rail Jam",
+      "type": "Activity",
+      "image": "/images/rail-jam.jpg",
+      "alt": "Skater di atas rail merah saat Rail Jam",
+      "focus": "center"
+    },
+    {
+      "title": "Game of Skate",
+      "type": "Activity",
+      "image": "/images/game-of-skate.jpg",
+      "alt": "Skater melompat saat Game of Skate",
+      "focus": "top"
+    },
+    {
+      "title": "Skate x Mural",
+      "type": "Activity",
+      "image": "/images/skate-mural.jpg",
+      "alt": "Mural warna-warni di bowl skatepark",
+      "focus": "center"
+    },
+    {
+      "title": "Go Skateboarding Day",
+      "type": "Activity",
+      "image": "/images/go-skate-day.jpg",
+      "alt": "Panggung Go Skateboarding Day",
+      "focus": "center"
+    },
+    {
+      "title": "Event Collabs",
+      "type": "Activity",
+      "image": "/images/event-collabs.jpg",
+      "alt": "Pembawa acara di event kolaborasi",
+      "focus": "center"
+    },
+    {
+      "title": "Skate School",
+      "type": "Programs",
+      "image": "/images/skate-school.jpg",
+      "alt": "Sesi belajar Skate School",
+      "focus": "center"
+    },
+    {
+      "title": "Community Visit",
+      "type": "Programs",
+      "image": "/images/community-visit.jpg",
+      "alt": "Kunjungan komunitas ke event skate",
+      "focus": "center"
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "heading": "Structure\n+ Teams",
+  "text": "Pengelolaan komunitas bersifat kolaboratif dan fleksibel, di mana setiap anggota memiliki peran (jobdesk) masing-masing dalam menjalankan kegiatan. Koordinasi sesi, event, dan keputusan bersama dilakukan secara bergotong royong, dengan ruang bagi setiap orang untuk berkontribusi sesuai kemampuan dan tanggung jawabnya.",
+  "rows": [
+    {
+      "members": [
+        {
+          "role": "Ketua",
+          "name": "Toni",
+          "featured": true
+        }
+      ]
+    },
+    {
+      "members": [
+        {
+          "role": "Wakil Ketua 1",
+          "name": "Danar",
+          "featured": false
+        },
+        {
+          "role": "Wakil Ketua 2",
+          "name": "Rony",
+          "featured": false
+        }
+      ]
+    },
+    {
+      "members": [
+        {
+          "role": "Bendahara",
+          "name": "Havi",
+          "featured": false
+        },
+        {
+          "role": "Sekretaris 1",
+          "name": "Kesyi",
+          "featured": false
+        },
+        {
+          "role": "Sekretaris 2",
+          "name": "Sabil",
+          "featured": false
+        }
+      ]
+    },
+    {
+      "members": [
+        {
+          "role": "Sie. Acara",
+          "name": "Rony",
+          "featured": false
+        },
+        {
+          "role": "Sie. Perkap",
+          "name": "Hasan",
+          "featured": false
+        },
+        {
+          "role": "Sie. Media",
+          "name": "Raja",
+          "featured": false
+        },
+        {
+          "role": "Sie. Humas",
+          "name": "Rafi",
+          "featured": false
+        }
+      ]
+    }
+  ]
+}

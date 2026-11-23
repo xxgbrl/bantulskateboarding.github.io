@@ -1,0 +1,36 @@
+{
+  "items": [
+    {
+      "label": "Tentang",
+      "href": "#tentang"
+    },
+    {
+      "label": "Visi & Misi",
+      "href": "#visi"
+    },
+    {
+      "label": "Kegiatan",
+      "href": "#kegiatan"
+    },
+    {
+      "label": "Prestasi",
+      "href": "#prestasi"
+    },
+    {
+      "label": "Struktur",
+      "href": "#struktur"
+    },
+    {
+      "label": "Event",
+      "href": "#event"
+    },
+    {
+      "label": "Galeri",
+      "href": "#galeri"
+    },
+    {
+      "label": "Kontak",
+      "href": "#kontak"
+    }
+  ]
+}

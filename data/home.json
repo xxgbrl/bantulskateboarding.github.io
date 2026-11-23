@@ -1,0 +1,17 @@
+{
+  "title": "Bantul Skateboarding",
+  "subtitle": "Tak peduli latar belakang, di atas papan kita semua setara dan bersaudara.",
+  "image": "/images/hero.jpg",
+  "buttons": [
+    {
+      "label": "Gabung bersama kami",
+      "href": "#kontak",
+      "style": "solid"
+    },
+    {
+      "label": "Lihat kegiatan",
+      "href": "#kegiatan",
+      "style": "line"
+    }
+  ]
+}

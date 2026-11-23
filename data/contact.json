@@ -1,0 +1,36 @@
+{
+  "heading": "Contact\n+ Socials",
+  "socials": [
+    {
+      "platform": "Instagram",
+      "accounts": [
+        {
+          "handle": "@bantulskateboarding",
+          "url": "https://instagram.com/bantulskateboarding"
+        },
+        {
+          "handle": "@girlsbantulskateboarding",
+          "url": "https://instagram.com/girlsbantulskateboarding"
+        }
+      ]
+    },
+    {
+      "platform": "TikTok",
+      "accounts": [
+        {
+          "handle": "@bantulskateboarding",
+          "url": "https://www.tiktok.com/@bantulskateboarding"
+        }
+      ]
+    }
+  ],
+  "person_name": "Danar Riyandi Wicaksono",
+  "person_instagram": "dnrrnd1__",
+  "whatsapp_number": "6283113030703",
+  "whatsapp_display": "+62 831-1303-0703",
+  "whatsapp_greeting": "Halo Bantul Skateboarding",
+  "button_label": "Chat lewat WhatsApp",
+  "button_message": "Halo Bantul Skateboarding, aku mau gabung",
+  "image": "/images/contact.jpg",
+  "alt": "Foto bersama anggota Bantul Skateboarding di malam hari"
+}

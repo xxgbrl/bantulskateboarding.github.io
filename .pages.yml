@@ -1,0 +1,216 @@
+# Konfigurasi Pages CMS (https://pagescms.org)
+# Semua isi website diatur dari sini. Tidak perlu edit index.html.
+
+media:
+  input: images
+  output: /images
+
+content:
+  - name: home
+    label: "1. Beranda (Hero)"
+    type: file
+    path: data/home.json
+    format: json
+    fields:
+      - { name: title, label: Judul besar, type: string, required: true }
+      - { name: subtitle, label: Kalimat di bawah judul, type: text }
+      - { name: image, label: Foto latar, type: image }
+      - name: buttons
+        label: Tombol
+        type: object
+        list: true
+        fields:
+          - { name: label, label: Teks tombol, type: string, required: true }
+          - { name: href, label: "Tujuan (contoh: #kontak atau https://...)", type: string, required: true }
+          - name: style
+            label: Gaya tombol
+            type: select
+            default: solid
+            options:
+              values: [solid, line]
+
+  - name: nav
+    label: "2. Menu Navigasi"
+    type: file
+    path: data/nav.json
+    format: json
+    fields:
+      - name: items
+        label: Daftar menu (bisa tambah, hapus, urutkan)
+        type: object
+        list: true
+        fields:
+          - { name: label, label: Teks menu, type: string, required: true }
+          - { name: href, label: "Tujuan (contoh: #galeri atau https://...)", type: string, required: true }
+
+  - name: about
+    label: "3. Tentang Kami"
+    type: file
+    path: data/about.json
+    format: json
+    fields:
+      - { name: heading, label: "Judul (Enter = baris baru)", type: text }
+      - { name: paragraphs, label: "Paragraf (**teks** = tebal)", type: text, list: true }
+      - { name: image, label: Foto, type: image }
+      - { name: alt, label: Deskripsi foto, type: string }
+
+  - name: vision
+    label: "4. Visi & Misi"
+    type: file
+    path: data/vision.json
+    format: json
+    fields:
+      - { name: heading, label: "Judul (Enter = baris baru)", type: text }
+      - { name: vision, label: Visi, type: text }
+      - { name: missions, label: Daftar misi, type: text, list: true }
+
+  - name: activities
+    label: "5. Kegiatan"
+    type: file
+    path: data/activities.json
+    format: json
+    fields:
+      - { name: heading, label: "Judul (Enter = baris baru)", type: text }
+      - { name: intro, label: Paragraf pengantar, type: text, list: true }
+      - name: items
+        label: Kartu kegiatan
+        type: object
+        list: true
+        fields:
+          - { name: title, label: Nama kegiatan, type: string, required: true }
+          - name: type
+            label: Label
+            type: select
+            default: Activity
+            options:
+              values: [Activity, Programs]
+          - { name: image, label: Foto, type: image, required: true }
+          - { name: alt, label: Deskripsi foto, type: string }
+          - name: focus
+            label: Fokus potongan foto
+            type: select
+            default: center
+            options:
+              values: [center, top]
+
+  - name: athletes
+    label: "6. Prestasi Anggota"
+    type: file
+    path: data/athletes.json
+    format: json
+    fields:
+      - { name: heading, label: "Judul (Enter = baris baru)", type: text }
+      - { name: intro, label: Paragraf pengantar, type: text, list: true }
+      - { name: image, label: Foto utama, type: image }
+      - { name: alt, label: Deskripsi foto utama, type: string }
+      - name: items
+        label: Daftar atlet
+        type: object
+        list: true
+        fields:
+          - { name: name, label: Nama, type: string, required: true }
+          - { name: image, label: Foto, type: image, required: true }
+          - { name: alt, label: Deskripsi foto, type: string }
+          - name: results
+            label: Daftar prestasi
+            type: object
+            list: true
+            fields:
+              - { name: place, label: "Juara (contoh: 1st, 2nd, Best Skater)", type: string, required: true }
+              - { name: category, label: Kategori, type: string }
+              - { name: event, label: Nama event, type: string }
+              - { name: year, label: Tahun, type: string }
+
+  - name: structure
+    label: "7. Struktur Komunitas"
+    type: file
+    path: data/structure.json
+    format: json
+    fields:
+      - { name: heading, label: "Judul (Enter = baris baru)", type: text }
+      - { name: text, label: Deskripsi, type: text }
+      - name: rows
+        label: Baris struktur (atas ke bawah)
+        type: object
+        list: true
+        fields:
+          - name: members
+            label: Anggota di baris ini
+            type: object
+            list: true
+            fields:
+              - { name: role, label: Jabatan, type: string, required: true }
+              - { name: name, label: Nama, type: string, required: true }
+              - { name: featured, label: Beri garis highlight (untuk ketua), type: boolean, default: false }
+
+  - name: events
+    label: "8. Riwayat Event"
+    type: file
+    path: data/events.json
+    format: json
+    fields:
+      - { name: heading, label: "Judul (Enter = baris baru)", type: text }
+      - { name: intro, label: Paragraf pengantar, type: text, list: true }
+      - name: items
+        label: Daftar event
+        type: object
+        list: true
+        fields:
+          - { name: title, label: Nama event, type: string, required: true }
+          - { name: place, label: Lokasi, type: string }
+          - { name: date, label: "Waktu (contoh: Mei 2025)", type: string }
+
+  - name: gallery
+    label: "9. Galeri Foto"
+    type: file
+    path: data/gallery.json
+    format: json
+    fields:
+      - { name: heading, label: Judul, type: text }
+      - name: items
+        label: Daftar foto
+        type: object
+        list: true
+        fields:
+          - { name: image, label: Foto, type: image, required: true }
+          - { name: alt, label: Deskripsi foto, type: string }
+
+  - name: contact
+    label: "10. Kontak & Sosmed"
+    type: file
+    path: data/contact.json
+    format: json
+    fields:
+      - { name: heading, label: "Judul (Enter = baris baru)", type: text }
+      - name: socials
+        label: Media sosial komunitas
+        type: object
+        list: true
+        fields:
+          - { name: platform, label: "Platform (contoh: Instagram)", type: string, required: true }
+          - name: accounts
+            label: Akun
+            type: object
+            list: true
+            fields:
+              - { name: handle, label: "Tampilan (contoh: @bantulskateboarding)", type: string, required: true }
+              - { name: url, label: Link profil, type: string, required: true }
+      - { name: person_name, label: Nama contact person, type: string }
+      - { name: person_instagram, label: "Instagram contact person (tanpa @)", type: string }
+      - { name: whatsapp_number, label: "Nomor WhatsApp (format 62..., tanpa + dan spasi)", type: string }
+      - { name: whatsapp_display, label: "Tampilan nomor (contoh: +62 831-1303-0703)", type: string }
+      - { name: whatsapp_greeting, label: Pesan otomatis saat nomor diklik, type: string }
+      - { name: button_label, label: Teks tombol WhatsApp, type: string }
+      - { name: button_message, label: Pesan otomatis dari tombol, type: string }
+      - { name: image, label: Foto, type: image }
+      - { name: alt, label: Deskripsi foto, type: string }
+
+  - name: site
+    label: "11. Pengaturan Umum (Logo & Footer)"
+    type: file
+    path: data/site.json
+    format: json
+    fields:
+      - { name: logo, label: Logo, type: image }
+      - { name: logo_alt, label: Deskripsi logo, type: string }
+      - { name: footer_text, label: Teks footer, type: string }

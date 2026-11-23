@@ -1,0 +1,165 @@
+{
+  "heading": "Member\nAchievements",
+  "intro": [
+    "Sejak berdiri lebih dari lima tahun lalu, komunitas ini berkembang dari sekelompok kecil teman menjadi kolektif skateboard yang aktif dan solid.",
+    "Pencapaian anggota diakui baik secara individu maupun kolektif, mencerminkan konsistensi partisipasi, perkembangan skill, serta kontribusi dalam menjalankan peran masing-masing di setiap sesi dan event komunitas."
+  ],
+  "image": "/images/member.jpg",
+  "alt": "Anggota menerima sertifikat penghargaan",
+  "items": [
+    {
+      "name": "Tecto",
+      "image": "/images/tecto.jpg",
+      "alt": "Tecto bersama peserta lomba memegang sertifikat",
+      "results": [
+        {
+          "place": "3rd",
+          "category": "Under 15",
+          "event": "YSC",
+          "year": "2021"
+        },
+        {
+          "place": "1st",
+          "category": "Women Class",
+          "event": "Porda DIY",
+          "year": "2022"
+        },
+        {
+          "place": "2nd",
+          "category": "Women Class",
+          "event": "Localpride Fest",
+          "year": "2022"
+        },
+        {
+          "place": "2nd",
+          "category": "Game of Skate",
+          "event": "Fornas Jabar",
+          "year": "2023"
+        },
+        {
+          "place": "3rd",
+          "category": "Best Trick",
+          "event": "Fornas Jabar",
+          "year": "2023"
+        },
+        {
+          "place": "1st",
+          "category": "Women Class",
+          "event": "Kemerdekaan Fest",
+          "year": "2023"
+        },
+        {
+          "place": "2nd",
+          "category": "Women Class",
+          "event": "LPM Kuta Open",
+          "year": "2023"
+        },
+        {
+          "place": "2nd",
+          "category": "Women Class",
+          "event": "Titi Batu Ubud",
+          "year": "2023"
+        },
+        {
+          "place": "4th",
+          "category": "Open Women",
+          "event": "Kuta Bahari Fest",
+          "year": "2023"
+        },
+        {
+          "place": "3rd",
+          "category": "Street Women",
+          "event": "Fonas NTB",
+          "year": "2025"
+        }
+      ]
+    },
+    {
+      "name": "Kesyi",
+      "image": "/images/kesyi.jpg",
+      "alt": "Kesyi dengan medali dan hadiah lomba",
+      "results": [
+        {
+          "place": "2nd",
+          "category": "Women Class",
+          "event": "YSC",
+          "year": "Maret 2022"
+        },
+        {
+          "place": "3rd",
+          "category": "Women Class",
+          "event": "YSC",
+          "year": "September 2022"
+        },
+        {
+          "place": "2nd",
+          "category": "Women Class",
+          "event": "YSC",
+          "year": "2024"
+        },
+        {
+          "place": "Best Skater",
+          "category": "76 Heppiii",
+          "event": "",
+          "year": "2026"
+        }
+      ]
+    },
+    {
+      "name": "Kenzie",
+      "image": "/images/kenzie.jpg",
+      "alt": "Kenzie dengan medali dan sertifikat",
+      "results": [
+        {
+          "place": "3rd",
+          "category": "Under 15 Class",
+          "event": "Exhibition Porda XVI DIY",
+          "year": "2022"
+        },
+        {
+          "place": "2nd",
+          "category": "Beginner Class",
+          "event": "HUT RI Skate Comp.",
+          "year": "2023"
+        },
+        {
+          "place": "1st",
+          "category": "Beginner Class",
+          "event": "YSC x JCM",
+          "year": "2025"
+        },
+        {
+          "place": "2nd",
+          "category": "Street Under 15 Men",
+          "event": "Kejurnas Skate Jakarta",
+          "year": "2026"
+        },
+        {
+          "place": "2nd",
+          "category": "Beginner Class Campuran",
+          "event": "Forda II DIY",
+          "year": "2026"
+        }
+      ]
+    },
+    {
+      "name": "Juno",
+      "image": "/images/juno.jpg",
+      "alt": "Juno bersama peraih medali Forda DIY",
+      "results": [
+        {
+          "place": "2nd",
+          "category": "Beginner Class Campuran",
+          "event": "Forda I DIY",
+          "year": "2025"
+        },
+        {
+          "place": "1st",
+          "category": "Beginner Class Campuran",
+          "event": "Forda II DIY",
+          "year": "2026"
+        }
+      ]
+    }
+  ]
+}
