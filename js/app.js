@@ -1,4 +1,3 @@
-
 (() => {
 "use strict";
 
@@ -50,15 +49,29 @@ function initScrollSpy() {
 }
 
 /* 3. CAROUSEL */
-const carousel = (slides, label, names = []) => `
-<div class="car" role="region" aria-roledescription="carousel" aria-label="${esc(label)}">
-  <div class="car-track" tabindex="0">${slides.map((s, i) => `<div class="car-slide" role="group" aria-label="${i + 1} / ${slides.length}">${s}</div>`).join("")}</div>
-  ${slides.length > 1 ? `<div class="car-ctl">
+const carousel = (slides, label, opts = {}) => {
+  const {top = false, names = [], fit = "max"} = opts;
+  const ctl = slides.length > 1 ? `<div class="car-ctl${top ? " top" : ""}">
     <button type="button" class="car-btn" data-dir="-1" aria-label="Sebelumnya">‹</button>
-    <div class="car-dots">${slides.map((_, i) => `<button type="button" class="car-dot" data-i="${i}" aria-label="${esc(names[i] || "Halaman " + (i + 1))}"></button>`).join("")}</div>
+    <div class="car-dots${names.length ? " named" : ""}">${slides.map((_, i) => names[i]
+      ? `<button type="button" class="car-dot tab-pill" data-i="${i}">${esc(names[i])}</button>`
+      : `<button type="button" class="car-dot" data-i="${i}" aria-label="Halaman ${i + 1}"></button>`).join("")}</div>
     <button type="button" class="car-btn" data-dir="1" aria-label="Berikutnya">›</button>
-  </div>` : ""}
-</div>`;
+  </div>` : "";
+  return `<div class="car" data-fit="${fit}" role="region" aria-roledescription="carousel" aria-label="${esc(label)}">
+    ${top ? ctl : ""}
+    <div class="car-track" tabindex="0">${slides.map((x, i) => `<div class="car-slide" role="group" aria-label="${i + 1} / ${slides.length}">${x}</div>`).join("")}</div>
+    ${top ? "" : ctl}
+  </div>`;
+};
+
+const liveCarousels = [];
+addEventListener("resize", () => {
+  for (let i = liveCarousels.length - 1; i >= 0; i--) {
+    if (!liveCarousels[i].track.isConnected) liveCarousels.splice(i, 1);
+    else liveCarousels[i].sync();
+  }
+});
 
 function initCarousels(root) {
   root.querySelectorAll(".car").forEach(car => {
@@ -67,9 +80,13 @@ function initCarousels(root) {
     const dots = [...car.querySelectorAll(".car-dot")];
     const [prev, next] = car.querySelectorAll(".car-btn");
     const smooth = !matchMedia("(prefers-reduced-motion:reduce)").matches;
+    const uniform = car.dataset.fit !== "active";
     let cur = 0;
 
-    const fit = () => { track.style.height = slides[cur].offsetHeight + "px"; };
+    const fit = () => {
+      const h = uniform ? Math.max(...slides.map(s => s.offsetHeight)) : slides[cur].offsetHeight;
+      track.style.height = h + "px";
+    };
     const mark = () => {
       dots.forEach((d, i) => d.setAttribute("aria-current", String(i === cur)));
       if (prev) { prev.disabled = cur === 0; next.disabled = cur === slides.length - 1; }
@@ -88,12 +105,16 @@ function initCarousels(root) {
     dots.forEach(d => d.addEventListener("click", () => go(+d.dataset.i)));
 
     if ("ResizeObserver" in window) { const ro = new ResizeObserver(fit); slides.forEach(s => ro.observe(s)); }
-    addEventListener("resize", () => { track.scrollLeft = cur * track.clientWidth; fit(); });
+    liveCarousels.push({track, sync: () => { track.scrollLeft = cur * track.clientWidth; fit(); }});
     mark(); fit();
   });
 }
 
-/* 4. RENDER TIAP SECTION */
+const mqPhone = matchMedia("(max-width:719px)"), mqWide = matchMedia("(min-width:960px)");
+const relayout = [];
+[mqPhone, mqWide].forEach(m => m.addEventListener("change", () => relayout.forEach(fn => fn())));
+
+/* 4. RENDER SECTION */
 run("site", d => {
   ["logo", "logo2"].forEach(id => {
     if (d.logo) $(id).src = src(d.logo);
@@ -126,11 +147,16 @@ run("vision", d => {
 });
 
 run("activities", d => {
-  const card = a => `<figure class="act">${img(a.image, a.alt, a.focus === "top" ? ' style="object-position:top"' : "")}<figcaption><span class="pill">${esc(a.type)}</span><b>${esc(a.title)}</b></figcaption></figure>`;
-  const items = d.items || [], pages = [];
-  for (let i = 0; i < items.length; i += 8) pages.push(`<div class="page">${items.slice(i, i + 8).map(card).join("")}</div>`); // 8 foto per halaman (4 x 2)
-  $("activities").innerHTML = `<h2>${fmt(d.heading)}</h2><div class="intro">${paras(d.intro)}</div>${carousel(pages, "Kegiatan")}`;
-  initCarousels($("activities"));
+  const card = x => `<figure class="act">${img(x.image, x.alt, x.focus === "top" ? ' style="object-position:top"' : "")}<figcaption><span class="pill">${esc(x.type)}</span><b>${esc(x.title)}</b></figcaption></figure>`;
+  const draw = () => {
+    const per = mqPhone.matches ? 4 : 8;
+    const items = d.items || [], pages = [];
+    for (let i = 0; i < items.length; i += per) pages.push(`<div class="page">${items.slice(i, i + per).map(card).join("")}</div>`);
+    $("activities-body").innerHTML = carousel(pages, "Kegiatan");
+    initCarousels($("activities-body"));
+  };
+  $("activities").innerHTML = `<h2>${fmt(d.heading)}</h2><div class="intro">${paras(d.intro)}</div><div id="activities-body"></div>`;
+  draw(); relayout.push(draw);
 });
 
 run("athletes", d => {
@@ -145,19 +171,53 @@ run("athletes", d => {
   const items = d.items || [];
   $("achievements").innerHTML = `
     <div class="two wide-l"><div><h2>${fmt(d.heading)}</h2>${paras(d.intro)}</div>${img(d.image, d.alt, ' class="photo" style="aspect-ratio:4/3;object-position:center 20%"')}</div>
-    ${carousel(items.map(who), "Prestasi anggota", items.map(a => a.name))}`;
+    ${carousel(items.map(who), "Prestasi anggota", {top: true, names: items.map(a => a.name), fit: "active"})}`;
   initCarousels($("achievements"));
 });
 
 run("structure", d => {
+  const colsFor = n => n <= 3 ? Math.max(n, 1) : (n === 4 ? 2 : 3);
   $("structure").innerHTML = `<div><h2>${fmt(d.heading)}</h2><p>${fmt(d.text)}</p></div>
-    <div class="org">${(d.rows || []).map(r => `<div class="row">${(r.members || []).map(m =>
+    <div class="org">${(d.rows || []).map(r => `<div class="row" style="--cols:${colsFor((r.members || []).length)}">${(r.members || []).map(m =>
       `<div class="node${m.featured ? " top" : ""}"><small>${esc(m.role)}</small><strong>${esc(m.name)}</strong></div>`).join("")}</div>`).join("")}</div>`;
 });
 
 run("events", d => {
+  const groups = new Map();
+  (d.items || []).forEach(e => {
+    const y = (String(e.date || "").match(/\b(?:19|20)\d{2}\b/) || ["Lainnya"])[0];
+    if (!groups.has(y)) groups.set(y, []);
+    groups.get(y).push(e);
+  });
+  const years = [...groups.keys()].sort();
+  let cur = [...years].reverse().find(y => y !== "Lainnya") || years[0];
+
+  const li = e => `<li><b>${esc(e.title)}</b><span>${[e.place, e.date].filter(Boolean).map(esc).join(" · ")}</span></li>`;
+  const draw = () => {
+    const perSlide = mqWide.matches ? 3 : (mqPhone.matches ? 1 : 2);
+    const list = groups.get(cur) || [], cols = [], slides = [];
+    for (let i = 0; i < list.length; i += 4) cols.push(`<ol class="tl">${list.slice(i, i + 4).map(li).join("")}</ol>`);
+    for (let i = 0; i < cols.length; i += perSlide) slides.push(`<div class="tl-slide" style="--cols:${perSlide}">${cols.slice(i, i + perSlide).join("")}</div>`);
+    $("events-body").innerHTML = carousel(slides, `Event ${cur}`);
+    initCarousels($("events-body"));
+  };
+  const mark = () => $("events").querySelectorAll(".tab").forEach(t => {
+    const on = t.dataset.y === cur;
+    t.setAttribute("aria-selected", String(on)); t.tabIndex = on ? 0 : -1;
+  });
+
   $("events").innerHTML = `<h2>${fmt(d.heading)}</h2><div class="intro">${paras(d.intro)}</div>
-    <ol class="tl">${(d.items || []).map(e => `<li><b>${esc(e.title)}</b><span>${[e.place, e.date].filter(Boolean).map(esc).join(" · ")}</span></li>`).join("")}</ol>`;
+    <div class="tabs" role="tablist" aria-label="Pilih tahun">${years.map(y => `<button type="button" role="tab" class="tab tab-pill" data-y="${esc(y)}">${esc(y)}</button>`).join("")}</div>
+    <div id="events-body" role="tabpanel"></div>`;
+  const tabs = $("events").querySelector(".tabs");
+  tabs.addEventListener("click", e => { const t = e.target.closest(".tab"); if (t) { cur = t.dataset.y; mark(); draw(); } });
+  tabs.addEventListener("keydown", e => {
+    if (e.key !== "ArrowRight" && e.key !== "ArrowLeft") return;
+    const i = years.indexOf(cur) + (e.key === "ArrowRight" ? 1 : -1);
+    if (i < 0 || i >= years.length) return;
+    cur = years[i]; mark(); draw(); tabs.querySelector(`[data-y="${cur}"]`).focus();
+  });
+  mark(); draw(); relayout.push(draw);
 });
 
 run("gallery", d => {

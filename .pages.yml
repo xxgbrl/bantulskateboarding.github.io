@@ -1,6 +1,3 @@
-# Konfigurasi Pages CMS (https://pagescms.org)
-# Semua isi website diatur dari sini. Tidak perlu edit index.html.
-
 media:
   input: images
   output: /images
@@ -158,7 +155,7 @@ content:
         fields:
           - { name: title, label: Nama event, type: string, required: true }
           - { name: place, label: Lokasi, type: string }
-          - { name: date, label: "Waktu (contoh: Mei 2025)", type: string }
+          - { name: date, label: "Waktu — WAJIB ada tahun, dipakai untuk pilihan tahun (contoh: Mei 2025)", type: string, required: true }
 
   - name: gallery
     label: "9. Galeri Foto"
