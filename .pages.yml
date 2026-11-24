@@ -165,7 +165,7 @@ content:
     fields:
       - { name: heading, label: Judul, type: text }
       - name: items
-        label: Daftar foto
+        label: "Daftar foto (6 foto per slide, otomatis jadi geser kiri/kanan kalau lebih)"
         type: object
         list: true
         fields:

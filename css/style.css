@@ -168,12 +168,14 @@ ol.tl{list-style:none;border-left:2px solid #444;padding-left:1.4rem}
 .tl span{color:var(--mute);font-size:.95rem}
 @media(max-width:719px){.tl-slide{gap:0 1.5rem}}
 
-/* 10. GALERI */
-.gal{columns:2;column-gap:1rem}
-@media(max-width:559px){.gal{column-gap:.75rem}}
-@media(min-width:960px){.gal{columns:3}}
-.gal img{margin-bottom:1rem;border-radius:var(--r);width:100%;break-inside:avoid;height:auto}
-@media(max-width:559px){.gal img{margin-bottom:.75rem}}
+/* 10. GALERI  */
+#gallery-body{--gap:1rem;--hmax:380px}
+@media(max-width:719px){#gallery-body{--gap:.75rem;--hmax:240px}}
+.jrow{display:flex;justify-content:center;gap:var(--gap)}
+.jrow+.jrow{margin-top:var(--gap)}
+.jitem{--ar:1.4;flex:var(--ar) 1 0px;min-width:0;max-width:calc(var(--ar) * var(--hmax));aspect-ratio:var(--ar);border-radius:var(--r);overflow:hidden;background:var(--card)}
+.jitem img{width:100%;height:100%;object-fit:cover}
+.jrow.part .jitem{flex:0 0 calc((100% - (var(--per) - 1) * var(--gap)) / var(--per));max-width:none;aspect-ratio:4/3}
 
 /* 11. KONTAK */
 .contact dl{display:grid;gap:.25rem 1.5rem;grid-template-columns:auto 1fr;margin:1.25rem 0 2rem}

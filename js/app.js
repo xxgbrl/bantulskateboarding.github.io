@@ -221,7 +221,33 @@ run("events", d => {
 });
 
 run("gallery", d => {
-  $("gallery").innerHTML = `<h2>${fmt(d.heading)}</h2><div class="gal">${(d.items || []).map(g => img(g.image, g.alt)).join("")}</div>`;
+  const PER_SLIDE = 6;
+  const cell = g => `<div class="jitem">${img(g.image, g.alt)}</div>`;
+  const draw = () => {
+    const perRow = mqPhone.matches ? 2 : 3;
+    const items = d.items || [], slides = [];
+    for (let i = 0; i < items.length; i += PER_SLIDE) {
+      const chunk = items.slice(i, i + PER_SLIDE), rows = [];
+      for (let j = 0; j < chunk.length; j += perRow) {
+        const r = chunk.slice(j, j + perRow);
+        rows.push(`<div class="jrow${r.length < perRow ? " part" : ""}" style="--per:${perRow}">${r.map(cell).join("")}</div>`);
+      }
+      slides.push(`<div class="jslide">${rows.join("")}</div>`);
+    }
+    const body = $("gallery-body");
+    body.innerHTML = carousel(slides, "Galeri");
+    body.querySelectorAll(".jitem img").forEach(im => {
+      const set = () => {
+        if (!im.naturalWidth) return;
+        const ar = Math.min(1.5, Math.max(0.75, im.naturalWidth / im.naturalHeight));
+        im.parentElement.style.setProperty("--ar", ar.toFixed(3));
+      };
+      if (im.complete) set(); else im.addEventListener("load", set, {once: true});
+    });
+    initCarousels(body);
+  };
+  $("gallery").innerHTML = `<h2>${fmt(d.heading)}</h2><div id="gallery-body"></div>`;
+  draw(); relayout.push(draw);
 });
 
 run("contact", d => {
